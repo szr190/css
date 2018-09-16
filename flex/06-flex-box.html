@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="flex.css"/>
+		<style>
+			.box{
+				width: 150px;
+				height: 150px;
+				border: 1px solid #ddd;
+			}
+			.item{
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			flex-box实现两端不需要多余空间，中间占满剩余空间
+		-->
+		<div class="box" flex>
+			<div class="item" flex-box='4' style="background: blue;">1</div>
+			<div class="item" flex-box='2' style="background: red;">2</div>
+			<div class="item" flex-box='4' style="background: black;">3</div>
+		</div>
+	</body>
+</html>

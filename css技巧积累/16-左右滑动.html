@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .box {
+            width: 500px;
+            height: 200px;
+        }
+
+        .box .item {
+            width: 80px;
+            height: 200px;
+            margin-left: 20px;
+            background: plum;
+        }
+
+        .scroll-x {
+            display: flex;
+            width: auto;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch
+        }
+
+        .scroll-x>.scroll-x-item {
+            flex-shrink: 0;
+            margin-right: .5rem
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-x box">
+        <div class="scroll-x-item item">1</div>
+        <div class="scroll-x-item item">2</div>
+        <div class="scroll-x-item item">3</div>
+        <div class="scroll-x-item item">4</div>
+        <div class="scroll-x-item item">5</div>
+        <div class="scroll-x-item item">6</div>
+    </div>
+</body>
+
+</html>

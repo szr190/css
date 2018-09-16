@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/*数字类型*/
+p {
+  font-size: 14px;
+}
+
+/*字符串类型*/
+.container {
+  font-size: 12px;
+}
+
+/*布尔类型*/
+/*NULL类型*/
+body {
+  color: red;
+}
+
+/*Color类型*/
+a {
+  color: rgba(255, 255, 255, 0);
+}
+
+/*运算*/
+span {
+  width: 25px;
+}
+
+span:before {
+  content: "abc";
+}
+
+span:after {
+  content: abc;
+}
+
+p {
+  padding: 7px auto;
+}
+
+p:before {
+  content: "Hello Sass 3";
+}
+
+p {
+  font-size: 5px;
+  width: 8px;
+}
+
+/*mixin 片段*/
+p {
+  color: #000;
+}
+
+/*# sourceMappingURL=04sass.css.map */

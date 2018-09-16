@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06-</title>
+	<style type="text/css">
+		body{
+		  color: #222;
+		}
+		h1{
+			font-size: 14px;
+			font-family: "Microsoft Yahei";
+			text-align: center;
+		}
+		.spinner{
+			width: 40px;
+			height: 40px;
+			border-radius: 100%;
+			background-color: green;
+			margin: 100px auto;
+			-webkit-animation:fadeOut 1s infinite ease-in-out;
+		}
+		@-webkit-keyframes fadeOut{
+			from{
+				transform: scale(0);
+			}
+			to{
+				transform: scale(1);
+				opacity: 0;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="spinner"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="flex.css"/>
+		<style>
+			.box{
+				width: 150px;
+				height: 150px;
+				border: 1px solid #ddd;
+			}
+			.item{
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			cross:top
+			cross:bottom
+			cross:baseline 基线对齐
+			cross:center  居中对齐
+			cross:stretch 高度并排铺满
+		-->
+		<div class="box" flex='cross:baseline'>
+			<div class="item" style="background: blue;">1</div>
+			<div class="item" style="background: red;">2</div>
+			<div class="item" style="background: black;">3</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+/*数字类型*/
+
+$n1:1.2;
+$n2:2;
+$n3:14px;
+p {
+    font-size: $n3;
+}
+
+
+/*字符串类型*/
+
+$s1:container;
+$s2:'container';
+$s3:"container";
+.#{$s1} {
+    font-size: 12px;
+}
+
+
+/*布尔类型*/
+
+$bt:true;
+$bf:false;
+
+/*NULL类型*/
+
+$null:null;
+body {
+    @if $null==null {
+        color: red;
+    }
+}
+
+
+/*Color类型*/
+
+$c1:blue;
+$c2:#fff;
+$c3:rgba(255, 255, 255, 0);
+a {
+    color: $c3;
+}
+
+
+/*运算*/
+
+$w1:10px;
+$w2:15px;
+span {
+    width: $w1 + $w2;
+}
+
+span:before {
+    content: "a" + bc;
+}
+
+//sass的一个规则
+span:after {
+    content: a + bc;
+}
+
+//涉及到运算的优先级
+p {
+    padding: (3px + 4px) auto;
+}
+
+//在字符串里做运算 #{}
+$three:3;
+p:before {
+    content:"Hello Sass #{$three}";
+}
+
+//除法
+p {
+    font-size: $w1/2;
+    width: round($w2/2);
+}
+
+
+/*mixin 片段*/
+
+@mixin content($color:red) {
+    color: $color;
+}
+
+p {
+    @include content(#000);
+}
+
+//多值参数
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -o-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+.shadow {
+    @include box-shadow(2px 2px 3px #000, 2px 6px 10px #ccc);
+}

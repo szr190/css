@@ -1,0 +1,10 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  transition: all 1s linear 0;
+  font-size: 14px;
+}
+.box1 {
+  width: 30px;
+}

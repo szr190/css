@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/*选择器嵌套*/
+body {
+  background: red;
+}
+body header {
+  background: green;
+}
+.con {
+  width: 100%;
+  height: 100px;
+}
+.con {
+  width: 600px;
+}
+
+/*属性嵌套*/
+footer {
+  background-color: red;
+  background-size: 100% 100%;
+}
+
+/*引用父选择器*/
+.container a {
+  color: red;
+}
+.container a:hover {
+  color: blue;
+}
+
+/*继承*/
+.alert, .alert-info {
+  background: red;
+}
+
+.small, .alert-info {
+  font-size: 12px;
+}
+
+.alert-info {
+  color: #000;
+}
+
+/*链式继承*/
+.one, .two, .three {
+  color: red;
+}
+
+.two, .three {
+  color: green;
+}
+
+.three {
+  color: #000;
+}
+
+/*交叉继承 - 使用的时候应该避免这种做法*/
+a span, a div .content, div a .content {
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=03sass.css.map */

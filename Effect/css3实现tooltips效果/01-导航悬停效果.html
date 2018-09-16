@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>01-</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		html{
+			height: 100%;
+			width: 100%;
+			-webkit-text-size-adjust:none;
+			-moz-text-size-adjust:none;
+			-ms-text-size-adjust:none;
+			-o-text-size-adjust:none;
+			text-size-adjust:none;
+		}
+		body{
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			background:#47c9af;;
+			color:#74777b;
+			font-weight:500;
+			font-size:1em;
+			font-family:'Raleway', Arial, sans-serif;
+		}
+		ul,ol,li{
+			list-style: none;
+		}
+		a:link,a:visited{
+			text-decoration:none;
+	        outline:none;
+	    }
+	    *, *:after, *:before{
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-o-box-sizing: border-box;
+			box-sizing: border-box; 
+		}
+
+		.clearfix:before,.clearfix:after{ 
+			content: ''; 
+			display:block;
+		}
+		.clearfix:after { 
+			clear: both; 
+		}
+
+		/*nav*/
+		.nav{
+			width:820px;
+			height:300px;
+			margin:200px auto 0 auto;
+			font-weight:300;
+		}
+		.nav ul li {
+			display: inline-block;
+			position: relative;
+			margin: 0 1em;
+			font-size: 1.5em;
+		}
+		.nav ul li a {
+			display: inline-block;
+			font-weight: 700;
+			padding: 0.15em 0.25em 0;
+			-webkit-transition: color 0.3s;
+			-moz-transition: color 0.3s;
+			-o-transition: color 0.3s;
+			transition:color 0.3s;
+		}
+
+		.nav a{
+			color:rgba(0,0,0,0.3);
+		}
+
+		.nav a:hover,.nav a:focus{
+			color:#fff;
+		}
+
+		/*气泡*/
+		.tooltip {
+			display: inline;
+			position: relative;
+			z-index: 999;
+		}
+		.tooltip-content{
+			position: absolute;
+			z-index: 999;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			background: #fff;
+			left:50%;/*距左边一半的距离*/
+			margin-left: -40px;
+			bottom: 100%;/*0% 圆与a是底对齐的 100% 圆是与a是顶对齐的*/
+			margin-bottom: 20px;
+			text-align: center;
+			padding-top: 25px;
+			color: #47c9af;
+			opacity: 0;/*先设置透明*/
+		}
+		.tooltip-content i {
+			opacity: 0;
+		}
+
+		.tooltip:hover .tooltip-content,
+		.tooltip:hover .tooltip-content i {
+			opacity: 1;
+		}
+		/*arrow*/
+		.tooltip-content::after{
+			content: "";
+			position: absolute;
+			width: 30px;
+			height: 20px;
+			background: #f00;
+			background: url(img/tooltip1.svg) no-repeat center center;
+			background-size: 100%;
+			margin: -7px 0 0 -15px;
+			top: 100%;
+			left: 50%;
+		}
+		.tooltip-effect-1 .tooltip-content{
+			-webkit-transform:translate3d(0,10px,0) rotate3d(1,1,1,45deg);
+			/*rotate3d x y z 是0-1之间的系数*/
+			/*定义中心点 - 只有在定义transform后才会生效*/
+			transform-origin:center bottom;
+			/*水平 垂直 center bottom == 50% 100%*/
+
+			-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+
+		}
+		.tooltip-effect-1 .tooltip-content i{
+			-webkit-transform:scale3d(0,0,1);
+
+			-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+		}
+		.tooltip-effect-2 .tooltip-content {
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-2 .tooltip-content i {
+	-webkit-transform: translate3d(0,15px,0);
+	transform: translate3d(0,15px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-3 .tooltip-content {
+	-webkit-transform: translate3d(0,10px,0) rotate3d(0,1,0,90deg);
+	transform: translate3d(0,10px,0) rotate3d(0,1,0,90deg);
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-3 .tooltip-content i {
+	-webkit-transform: scale3d(0,0,1);
+	transform: scale3d(0,0,1);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-4 .tooltip-content {
+	-webkit-transform: translate3d(0,-20px,0);
+	transform: translate3d(0,-20px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-4 .tooltip-content i {
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-5 .tooltip-content {
+	-webkit-transform: scale3d(0,0,1);
+	transform: scale3d(0,0,1);
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-5 .tooltip-content i {
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+		.tooltip:hover .tooltip-content,
+		.tooltip:hover .tooltip-content i {
+			pointer-events: auto;
+			-webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+			transform: translate3d(0,0,0) scale3d(1,1,1);
+		}
+
+		.tooltip-effect-1:hover .tooltip-content i {
+			-webkit-transform: rotate3d(1,1,1,0);
+			transform: rotate3d(1,1,1,0);
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="" class="tooltip tooltip-effect-1">
+					Home
+					<span class="tooltip-content"><i class="fa fa-fw fa-home"></i></span>
+				</a>
+			</li>
+			<li>
+				<a href="" class="tooltip tooltip-effect-2">
+					About me
+					<span class="tooltip-content"><i class="fa fa-fw fa-user"></i></span>
+				</a>
+			</li>
+			<li>
+				<a href="" class="tooltip tooltip-effect-3">
+					Photography
+					<span class="tooltip-content"><i class="fa fa-fw fa-camera-retro"></i></span>
+				</a>
+			</li>
+			<li>
+				<a href="" class="tooltip tooltip-effect-4">
+					Work
+					<span class="tooltip-content"><i class="fa fa-fw fa-briefcase"></i></span>
+				</a>
+			</li>
+			<li>
+				<a href="" class="tooltip tooltip-effect-5">
+					Contact
+					<span class="tooltip-content"><i class="fa fa-fw fa-envelope"></i></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

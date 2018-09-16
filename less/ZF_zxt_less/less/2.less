@@ -1,0 +1,24 @@
+// .pub() -> 函数(在less中只要设置了一个样式类,我们就可以称之为一个方法,其它地方需要这些样式直接.类名调用即可【原理：把样式类中的代码原封不动的复制过去】)
+// -> 不加括号既是普通样式类,也是封装的一个函数,编译的时候也会把它编译了,这个样式类中的代码也跟着编译,加括号仅仅是封装的函数,编译的时候是不编译函数的
+.pub(@w:100px,@h:100px,@color:green){
+    width: @w;
+    height: @h;
+    background-color: @color;
+}
+.transition(@property:all,@duration,@timing:linear,@delay:0){
+    transition: @arguments;// -> 按照变量的顺序去展示参数集合
+}
+.box{
+    .pub();
+    .transition(all,1s,linear,0);
+    font-size: 14px;
+}
+
+
+.sum(@n:0,@m:0){
+    @result:@n+@m;
+}
+.box1{
+    .sum(10, 20);
+    width: unit(@result,px);// unit是less提供的方法,这个方法的作用：unit([value],px) -> 给value值设置单位,但是之前如果已经有单位了,此处是把原有单位去掉
+}

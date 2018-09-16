@@ -1,0 +1,12 @@
+.pub(@x) when(@x<10){
+    width: 100px;
+    height: 100px;
+}
+.pub(@x) when(@x>10) and (@x<40){
+    width: 400px;
+    height: 200px;
+}
+.box{
+    .pub(30);
+    background-color: green;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            border: 1px solid red;
+            font-size: 100px;
+        }
+        .wrap{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* baseline - 默认是基线,比如说是本实例x的下边缘 */
+            /* top - 元素的顶端与行中最高元素的顶端对齐 */
+            /* text-top - 元素的顶端与父元素字体的顶端对齐 */
+            /* bottom - 元素的低端与行中最低元素的顶端对齐 */
+            /* text-bottom - 元素的低端与父元素字体的低端对齐 */
+            /* middle - 相对于中线对齐 (中线就是小写x的高度的一半) */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        vertical-align 垂直对齐
+            - 适用于inline inline-block
+    -->
+    <div class="box">
+        <div class="wrap"></div>xXay
+    </div>
+</body>
+</html>

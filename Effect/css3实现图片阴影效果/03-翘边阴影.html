@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		body{
+			font-family: "微软雅黑";
+			font-size: 20px;
+		}
+		.box{
+			width: 980px;
+			height: auto;
+			clear: both;
+			margin: 20px auto;
+			padding: 0;
+			overflow: hidden;
+		}
+		.box li{
+			list-style-type: none;
+			margin:20px 10px;
+			padding: 0;
+			width: 300px;
+			height: 220px;
+			border: 2px solid #efefef;
+			position: relative;
+			float: left;
+			background: #ffffff; /* old browsers */
+			line-height:220px;
+			font-size:32px;
+			text-align:center;
+
+			-webkit-box-shadow:0px 1px 4px rgba(0,0,0,0.27),0px 0px 60px rgba(0,0,0,0.1) inset;
+			-moz-box-shadow:0px 1px 4px rgba(0,0,0,0.27),0px 0px 60px rgba(0,0,0,0.1) inset;
+			-o-box-shadow:0px 1px 4px rgba(0,0,0,0.27),0px 0px 60px rgba(0,0,0,0.1) inset;
+			box-shadow:0px 1px 4px rgba(0,0,0,0.27),0px 0px 60px rgba(0,0,0,0.1) inset;
+		}
+		.box li:before{
+			content: "";
+			position: absolute;
+			z-index: -2;
+			width: 90%;
+			height: 80%;/*决定阴影的翘边高度*/
+			background: transparent;
+			left: 20px;
+			bottom: 8px;
+
+			-webkit-box-shadow:0px 8px 20px rgba(0,0,0,0.6);
+			-moz-box-shadow:0px 8px 20px rgba(0,0,0,0.6);
+			-o-box-shadow:0px 8px 20px rgba(0,0,0,0.6);
+			box-shadow:0px 8px 20px rgba(0,0,0,0.6);
+
+			/*实现翘边,则需要用到transform属性*/
+			/*
+				transform - IE9+及主流浏览器
+					功能：向元素应用2d或3d转换
+					语法：transform:none | transform:functions;
+					参数：
+						(1)skew(x,y) - 定义x和y轴的2d倾斜转换
+						   skew(x)
+						   skew(y)	
+			*/
+			-webkit-transform:skew(-12deg) rotate(-4deg);
+			-moz-transform:skew(-12deg) rotate(-4deg);
+			-o-transform:skew(-12deg) rotate(-4deg);
+			transform:skew(-12deg) rotate(-4deg);
+		}
+		.box li:after{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			width: 90%;
+			height: 80%;/*决定阴影的翘边高度*/
+			background: transparent;
+			right: 20px;
+			bottom: 8px;
+
+			-webkit-box-shadow:0px 8px 20px rgba(0,0,0,0.6);
+			-moz-box-shadow:0px 8px 20px rgba(0,0,0,0.6);
+			-o-box-shadow:0px 8px 20px rgba(0,0,0,0.6);
+			box-shadow:0px 8px 20px rgba(0,0,0,0.6);
+
+			/*实现翘边,则需要用到transform属性*/
+			/*
+				transform - IE9+及主流浏览器
+					功能：向元素应用2d或3d转换
+					语法：transform:none | transform:functions;
+					参数：
+						(1)skew(x,y) - 定义x和y轴的2d倾斜转换
+						   skew(x)
+						   skew(y)	
+			*/
+			-webkit-transform:skew(12deg) rotate(4deg);
+			-moz-transform:skew(12deg) rotate(4deg);
+			-o-transform:skew(12deg) rotate(4deg);
+			transform:skew(12deg) rotate(4deg);
+		}
+		.box li img{
+			width:290px;
+			height:210px;
+			padding:5px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li><img src="images/photo1.jpg" alt=""></li>
+		<li><img src="images/photo2.jpg" alt=""></li>
+		<li><img src="images/photo3.jpg" alt=""></li>
+	</ul>
+</body>
+</html>

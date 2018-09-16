@@ -1,0 +1,23 @@
+//1.普通的变量
+@w:200px;
+@r:red;
+.box{
+	width:@w;
+	height:@w;
+	background:@r;
+}
+
+//2.作为选择器和属性名
+@k:width;//必须是属性的名称
+.@{k}{
+	@{k}:100px;
+}
+
+//3.作为url
+@imgurl:'../img/';//注意在使用URL时要给其加""号,并且用{}的方式括起来
+.box3{
+	background:url("@{imgurl}1.jpg") no-repeat;
+	background-size:100px 100px;
+	width:100px;
+	height:100px;
+}

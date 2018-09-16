@@ -1,0 +1,102 @@
+/*1.普通的混合*/
+
+h1{
+	font-size:18px;
+	.fh;//引用类中的样式
+}
+h2{
+	font-size:16px;
+	.fh;
+}
+/*2.不带输出的混合*/
+.fh(){
+	color:#f00;
+}
+
+/*3.带选择器的混合*/
+h3{
+	font-size:30px;
+	color:#000;
+	&:hover{
+		color:#f00;
+	}
+}
+
+/*4.带参数的混合 5.带参数并且有默认值的混合*/
+.border(@color:#000){
+	border:1px solid @color;
+}
+.box4{
+	width:100px;
+	height:100px;
+	//.border(#f00);
+	.border();
+}
+
+/*6.带多个参数的混合*/
+.mins(@color;@padding:5px;@margin:2px){//参数尽量用;进行分割
+	color:@color;
+	padding:@padding;
+	margin:@margin;
+}
+.box6{
+	width:100px;
+	height:100px;
+	.mins(red;5px);
+}
+
+/*7.命名参数*/
+.c(@color:red;@margin:4px){
+	color:@color;
+	margin:@margin;
+}
+.class1{
+	.c(@margin:10px;);
+}
+.box7{
+	width:200px;
+	height:200px;
+	.class1;
+}
+
+/*8.@arguments变量*/
+.border(@solid:solid;@color:#000){
+	border:1px @arguments;
+}
+.box8{
+	width:100px;
+	height:100px;
+	.border();
+}
+
+/*9.匹配模式*/
+.border_radius(all,@w:5px){
+	border-radius:@w;
+}
+.border_radius(tl,@w:5px){
+	border-top-left-radius:@w;
+}
+.border_radius(tr,@w:5px){
+	border-top-right-radius:@w;
+}
+.border_radius(bl,@w:5px){
+	border-bottom-left-radius:@w;
+}
+.border_radius(br,@w:5px){
+	border-bottom-right-radius:@w;
+}
+.box9{
+	width:300px;
+	height:100px;
+	background:blue;
+	.border_radius(all,8px);
+}
+
+/*10.得到混合中变量的混合值*/
+.avg(@x,@y){
+	@avg:((@x+@y)/2);
+}
+.box10{
+	.avg(8px,10px);
+	padding:@avg;
+}

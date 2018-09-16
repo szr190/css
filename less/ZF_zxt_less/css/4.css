@@ -1,0 +1,21 @@
+.pub,
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+.com,
+.box {
+  padding: 10px;
+}
+.box {
+  background-color: blue;
+}
+.box .mark,
+.box .inner {
+  width: 100px;
+  height: 100px;
+}
+.box .inner {
+  background-color: pink;
+}

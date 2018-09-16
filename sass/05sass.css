@@ -1,0 +1,91 @@
+/*@if*/
+body {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+/*@for*/
+.span1 {
+  width: 20%;
+}
+
+.span2 {
+  width: 40%;
+}
+
+.span3 {
+  width: 60%;
+}
+
+.span4 {
+  width: 80%;
+}
+
+.span5 {
+  width: 100%;
+}
+
+.p1 {
+  width: 20%;
+}
+
+.p2 {
+  width: 40%;
+}
+
+.p3 {
+  width: 60%;
+}
+
+.p4 {
+  width: 80%;
+}
+
+/*@while*/
+.a6 {
+  width: 60%;
+}
+
+.a3 {
+  width: 30%;
+}
+
+/*@each*/
+.div1 {
+  color: blue;
+}
+
+.div2 {
+  color: red;
+}
+
+.div3 {
+  color: green;
+}
+
+/*List*/
+.text-default {
+  color: blue;
+}
+
+.text-info {
+  color: green;
+}
+
+.text-danger {
+  color: red;
+}
+
+/*Map*/
+.label-default {
+  color: blue;
+}
+
+.label-info {
+  color: green;
+}
+
+/*# sourceMappingURL=06sass.css.map */

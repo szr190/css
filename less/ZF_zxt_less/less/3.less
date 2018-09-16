@@ -1,0 +1,10 @@
+// 在less中每一个大括号都是一个私有作用域
+// less中也有变量提升
+@a:10;
+.box{
+    width: unit(@a,px);
+    @a:20;
+    .mark{
+        width: unit(@a,px);
+    }
+}

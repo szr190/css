@@ -1,0 +1,34 @@
+//原生css导入
+@import "css.css";
+//sass导入
+@import "part1";
+
+/*1 / 2 / 3*/
+
+$fontSize:14px;
+$fontSize:12px !default;
+
+/*多值变量*/
+
+$paddings:5px 10px 5px 10px;
+$maps:(color:red, borderColor:blue);
+
+/*变量的特殊用法*/
+
+$className:main;
+body {
+    $color: red !global;
+    color: $color;
+    font-size: $fontSize;
+    padding: $paddings;
+    padding-left: nth($paddings, 1);
+}
+
+footer {
+    color: $color;
+    background-color: map-get($maps, color);
+}
+
+.#{$className} {
+    width: 50px;
+}

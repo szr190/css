@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-</title>
+	<style type="text/css">
+		.butterfly{
+			margin: 50px auto;
+			position: relative;
+		}
+		.butterfly img{
+			width: 100%;
+			height: auto;
+		}
+		.butterfly,.butterfly .circle{
+			display: block;
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+		}
+		.butterfly .circle{
+			position: absolute;
+			top: 0;
+			left: 0;
+			border:20px solid #3b8210;
+			border-bottom-color: #ebc90b;
+			border-right-color: #ebc90b;
+			-webkit-transition:-webkit-transform 1s linear;
+		}
+		.butterfly:hover .circle{
+			-webkit-transform:rotate(180deg);
+		}
+	</style>
+</head>
+<body>
+	<a href="" class="butterfly">
+		<div class="circle"></div>
+		<img src="http://p3.qhimg.com/t014ca5b3e65fe126a6.png" alt="" />
+	</a>
+</body>
+</html>

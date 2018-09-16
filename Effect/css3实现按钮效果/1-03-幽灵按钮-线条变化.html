@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		body{
+			background: #333;
+		}
+		.box{
+			width: 800px;
+			height: 280px;
+			margin: 50px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		.box .link{
+			width: 205px;
+			height: 280px;
+			display: inline-block;
+			margin: 0 20px;
+		}
+		.box .link .icon{
+			display: block;
+			width: 100%;
+			height: 180px;		
+			-webkit-transition:ease-out 0.2s;
+			-moz-transition:ease-out 0.2s;
+			-o-transition:ease-out 0.2s;	
+			-ms-transition:ease-out 0.2s;
+			transition:ease-out 0.2s;
+		}
+		.box .link .icon:hover{
+			-webkit-transform:rotate(360deg) scale(1.2);
+			-moz-transform:rotate(360deg) scale(1.2);
+			-o-transform:rotate(360deg) scale(1.2);
+			-ms-transform:rotate(360deg) scale(1.2);
+			transform:rotate(360deg) scale(1.2);
+		}
+		.mission-link .icon{background:url(images/mission.png) no-repeat center 0;}
+
+		.play-link .icon{background:url(images/play.png) no-repeat center 0;}
+
+		.touch-link .icon{background:url(images/touch.png) no-repeat center 0;}
+		
+		.button{
+			display:block;
+		    width:180px;
+	        height:50px;
+	        border:2px solid rgba(255,255,255,0.8);
+	        line-height:50px;
+	        padding-left:20px;
+	        margin:0 auto;
+	        font-weight:bold;
+	        font-size:18px;
+	        text-decoration:none;
+	        text-transform:uppercase;/*让字母大写*/
+	        font-family:Arial;
+	        color:#2DCB70;
+	        background:url(images/allow.png) no-repeat 130px center;
+	        position: relative;
+
+	        /*
+	        	box-sizing
+	        		定义和用法：允许以特定的方式定义匹配某个区域的特定元素
+	        		语法：box-sizing:
+	        		 		content-box(默认)
+	        		 			宽度和高度分别应用到元素的内容框,在宽度和高度之外绘制元素的内边距和边框 
+	        		 		border-box 
+	        		 			为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制
+	        		 		inherit(继承);
+	        */
+	       -webkit-box-sizing:border-box;
+	       -moz-box-sizing:border-box;
+	       -o-box-sizing:border-box;
+	       box-sizing:border-box;
+
+	       -webkit-transition:ease 0.4s;
+	       -moz-transition:ease 0.4s;
+	       -o-transition:ease 0.4s;
+	       -ms-transition:ease 0.4s;
+	       transition:ease 0.4s;
+
+		}
+		.button:hover{
+			border:2px solid #fff;
+            background-position:140px center;
+		}
+		.button:hover .line{background:#fff;}
+
+		/*线条*/
+		.button .line{
+			background:none;
+			position: absolute;
+			-webkit-transition:ease 0.4s;
+	       -moz-transition:ease 0.4s;
+	       -o-transition:ease 0.4s;
+	       -ms-transition:ease 0.4s;
+	       transition:ease 0.4s;
+		}
+		/*
+			位置：从左到右
+			宽度：点---线(100%)
+		*/
+		.button .line-top{
+			width: 0;
+			height: 2px;/*由边框决定的*/
+			top: -2px;
+			left: -110%;/**/
+		}
+		.button:hover .line-top{
+			width: 100%;
+			left: -2px;
+		}
+
+		.button .line-right{
+			height: 0;
+			width: 2px;
+			right: -2px;
+			top: -110%;
+		}
+		.button:hover .line-right{
+			height: 100%;
+			top:-2px; 
+		}
+
+		.button .line-bottom{
+			width: 2px;
+			height: 0;
+			left: -2px;
+			bottom: -110%;
+		}
+		.button:hover .line-bottom{
+			height: 100%;
+			bottom: -2px;
+		}
+
+		.button .line-left{
+			width: 0;
+			height: 2px;
+			right: -110%;
+			bottom:-2px;
+		}
+		.button:hover .line-left{
+			width: 100%;
+			right: -2px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="link mission-link">
+			<span class="icon"></span>
+			<a href="#" class="button" data-title="My mission is clear">
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				mission
+			</a>
+			
+		</div>
+		<div class="link play-link">
+			<span class="icon"></span>
+			<a href="#" class="button" data-title="This is my playground">
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				play
+			</a>
+			
+		</div>
+		<div class="link touch-link">
+			<span class="icon"></span>
+			<a href="#" class="button" data-title="This is my playground demos">
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				touch
+			</a>
+			
+		</div>
+	</div>
+</body>
+</html>

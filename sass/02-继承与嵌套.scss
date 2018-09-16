@@ -1,0 +1,86 @@
+/*选择器嵌套*/
+
+body {
+    background: red;
+    header {
+        background: green;
+    }
+    //跳出嵌套
+    @at-root .con {
+        width: 100%;
+        height: 100px;
+    }
+    //使用参数跳出媒体查询
+    @media screen and (max-width:600px) {
+        @at-root(without: media rule) {
+            .con {
+                width: 600px;
+            }
+        }
+    }
+}
+
+
+/*属性嵌套*/
+
+footer {
+    background: {
+        color: red;
+        size: 100% 100%;
+    }
+}
+
+
+/*引用父选择器*/
+
+.container a {
+    color: red;
+    &:hover {
+        color: blue;
+    }
+}
+
+
+/*继承*/
+
+.alert {
+    background: red;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.alert-info {
+    @extend .alert,
+    .small;
+    color: #000;
+}
+
+
+/*链式继承*/
+
+.one {
+    color: red;
+}
+
+.two {
+    @extend .one;
+    color: green;
+}
+
+.three {
+    @extend .two;
+    color: #000;
+}
+
+
+/*交叉继承 - 使用的时候应该避免这种做法*/
+
+a span {
+    font-weight: normal;
+}
+
+div .content {
+    @extend span;
+}

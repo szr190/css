@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        :root{
+            --theme_color:red;
+        }
+        body{
+            color: var(--theme_color,'#000');
+        }
+        /* 将变量声明到局部,只能在子节点中使用 */
+        .selector { --color: yellow } 
+        .selector span { color: var(--color) }
+    </style>
+</head>
+<body>
+    <p class="selector">
+        <span>123</span>
+    </p>
+
+    <script>
+        // -> 操作全局变量
+        document.documentElement.style.setProperty('--theme_color','blue');
+    </script>
+</body>
+</html>

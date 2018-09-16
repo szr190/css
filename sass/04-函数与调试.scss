@@ -1,0 +1,36 @@
+/*rgb() rgba()*/
+
+$color:rgb(255, 255, 0);
+body {
+    color: $color;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*lighten() darken()*/
+
+p {
+    color: darken($color, 0.6); //lighten()类似用法
+}
+
+
+/*str-length() str-index()*/
+
+a {
+    z-index: str-length('aaaaaaa');
+    z-index: str-index('asdfg', 'd'); //sass的序列是从1开始的
+}
+
+
+/*自定义函数*/
+
+@function double($w) {
+    @return $w * 2;
+}
+
+div {
+    display: block;
+    width: double(10px);
+}
+
+@debug 'this is a bug';

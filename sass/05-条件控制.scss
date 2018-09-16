@@ -1,0 +1,85 @@
+/*@if*/
+
+$screenWidth:800px;
+body {
+    color: if($screenWidth>768, blue, red);
+}
+
+@if $screenWidth>768 {
+    p {
+        color: red;
+    }
+}
+
+@else if $screenWidth>400 {
+    span {
+        color: pink;
+    }
+}
+
+@else {
+    p {
+        color: green;
+    }
+}
+
+
+/*@for*/
+
+@for $i from 1 through 5 {
+    .span#{$i} {
+        width: 20% * $i;
+    }
+}
+
+@for $i from 1 to 5 {
+    .p#{$i} {
+        width: 20% * $i;
+    }
+}
+
+
+/*@while*/
+
+$j:6;
+@while $j>0 {
+    .a#{$j} {
+        width: 10% * $j;
+    }
+    $j:$j - 3;
+}
+
+
+/*@each*/
+
+$k:1;
+@each $c in blue,
+red,
+green {
+    .div#{$k} {
+        color: $c;
+    }
+    $k:$k+1;
+}
+
+
+/*List*/
+
+@each $key,
+$color in (default, blue),
+(info, green),
+(danger, red) {
+    .text-#{$key} {
+        color: $color;
+    }
+}
+
+
+/*Map*/
+
+@each $key,
+$value in (default:blue, info:green) {
+    .label-#{$key} {
+        color: $value;
+    }
+}

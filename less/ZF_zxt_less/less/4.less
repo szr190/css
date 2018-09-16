@@ -1,0 +1,31 @@
+.pub{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+.com{
+    padding: 10px;
+}
+// -> less中的继承并不是copy代码,而是让当前的样式类和继承的样式类共用一套样式(编译为群组选择器的方式)
+// .box:extend(.pub){
+//     background-color: blue;
+// }
+
+.box{
+    &:extend(.pub,.com);//->原理和上面的一样,继承多个使用,分隔
+    background-color: blue;
+}
+
+// -> 在嵌套中就需要注意了
+.box{
+    .mark{
+        width: 100px;
+        height: 100px;
+    }
+    .inner{
+        &:extend(.box .mark);//->  需要按照层级查找到
+        background-color: pink;
+    }
+}
+
+// -> 真实项目中想使用extend实现继承,我们一般都把需要继承的样式类写在最外层,而不是里层;如果想继承私有作用域中的样式类,需要把前缀准备好,这样会比较麻烦 

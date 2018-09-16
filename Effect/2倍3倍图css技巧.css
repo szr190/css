@@ -1,0 +1,18 @@
+/*普通显示屏*/
+.css{
+    background-image: url(img_1x.png);
+}
+
+/* 高清显示屏(设备像素比例大于等于2)使用2倍图  */
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+    .css{
+        background-image: url(img_2x.png);
+    }
+}
+
+/* 高清显示屏(设备像素比例大于等于3)使用3倍图  */
+@media only screen and (-webkit-min-device-pixel-ratio:3){
+    .css{
+        background-image: url(img_3x.png);
+    }
+}

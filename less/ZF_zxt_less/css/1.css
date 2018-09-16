@@ -1,0 +1,17 @@
+/*
+    1.设置变量使用 @[变量名]:[变量值](传统css支持的值都可以作为变量值)
+    2.命名的时候可以出现-符号
+    3.less中支持数学运算
+    4.什么时候使用变量? - 当有很多地方都使用了相同的值,以后如果改变的话所有元素的样式都要跟着改变,此时我们才用变量存储起来
+*/
+body {
+  font-size: 14px;
+  color: #000;
+  width: 80px;
+}
+.box3 {
+  background: url("../img/1.jpg") no-repeat;
+  background-size: 100px 100px;
+  width: 100px;
+  height: 100px;
+}

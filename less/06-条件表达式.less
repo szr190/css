@@ -1,0 +1,19 @@
+/*
+	when 关键字
+	lightness判断颜色的函数
+
+	返回bool值,放在条件when中
+	iscolor()
+	isnumber()
+*/
+.minix(@a) when(lightness(@a)>=50%){
+	background-color:black;
+}
+.minix(@a) when(lightness(@a)<50%){
+	background-color:white;
+}
+.minix(@a){
+	color:@a;
+}
+.class1{.minix(#ddd)}
+.class2{.minix(#555)}

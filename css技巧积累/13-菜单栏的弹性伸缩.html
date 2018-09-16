@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .index {
+            height: 100%;
+        }
+
+        /* 菜单栏的初始样式 */
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 10rem;
+            height: 100%;
+            background-color: darkgrey;
+            transform: translateX(-10rem);
+            z-index: 1;
+            transition: all .2s ease-in;
+        }
+
+        /* 内容区的初始样式 */
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: cornsilk;
+            transform: translateX(0);
+            transition: all .3s ease-in;
+        }
+
+        input {
+            display: none;
+        }
+
+        /* 切换按钮的初始样式 */
+
+        label {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 2;
+            transition: all .2s ease-in;
+        }
+
+        /* 切换按钮选中的样式 */
+
+        input:checked~label {
+            left: 12rem;
+        }
+
+        /* 切换按钮文字的切换样式 */
+
+        input:not(:checked)~label::after {
+            content: '拉出'
+        }
+
+        input:checked~label::after {
+            content: '收起'
+        }
+
+        /* 菜单栏显示的样式 */
+
+        input:checked~.menu {
+            transform: translateX(0)
+        }
+
+        /* 内容区显示的样式 */
+
+        input:checked~.content {
+            transform: translateX(10rem)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="index">
+        <input type="checkbox" id="btn">
+        <label for="btn"></label>
+        <div class="menu"></div>
+        <div class="content">
+            <p>我是内容</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

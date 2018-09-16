@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        /* 禁止保存图片 */
+
+        .no-callout {
+            -webkit-touch-callout: none
+        }
+
+        /* 禁止长按文字选择功能 */
+
+        .unselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        /* 移动端顺畅滚动 */
+
+        .scroll-touch {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* 移动端屏幕旋转时字体大小保持不变 */
+
+        html,
+        body,
+        form,
+        p,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%
+        }
+
+        /* 移动端横竖屏的适配 */
+
+        @media all and (orientation:portrait) {
+            body::after {
+                content: '竖屏'
+            }
+        }
+
+        @media all and (orientation:landscape) {
+            body::after {
+                content: '横屏'
+            }
+        }
+
+        /* 改变input光标的颜色 */
+
+        .input {
+            caret-color: red;
+        }
+
+        /* 移动端Android设备上去掉语音输入按钮 */
+
+        input::-webkit-input-speech-button {
+            display: none
+        }
+
+        /* 去掉为search自带的清空按钮 */
+
+        .search::-webkit-search-cancel-button {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

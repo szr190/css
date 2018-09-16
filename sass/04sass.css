@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*rgb() rgba()*/
+body {
+  color: yellow;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*lighten() darken()*/
+p {
+  color: #fcfc00;
+}
+
+/*str-length() str-index()*/
+a {
+  z-index: 7;
+  z-index: 3;
+}
+
+/*自定义函数*/
+div {
+  display: block;
+  width: 20px;
+}
+
+/*# sourceMappingURL=05sass.css.map */
