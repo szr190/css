@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        /* 
+            方法1
+                优点：兼容性较好,甚至可以兼容ie6,ie7
+                缺点：child里的文字也会水平居中,可以在.child添加text-align:left;还原
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+        .child {
+            display: inline-block;
+        } */
+
+
+        /* 
+            方法2
+                优点：只设置了child,ie8以上都支持
+                缺点：ie6,7不支持将div换成table
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .child {
+            display: table;
+            margin: 0 auto;
+        } */
+
+
+        /* 
+            方法3
+                优点：居中元素不会对其他的产生影响
+                缺点：transform属于css3内容,兼容性存在一定问题,高版本浏览器需要添加一些前缀
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            position: relative;
+        }
+        .child {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        } */
+
+
+        /* 
+            方法4
+                优点：简单快捷
+                缺点：低版本浏览器不支持
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            display: flex;
+        }
+        .child {
+            margin: 0 auto;
+        } */
+
+
+        /* 
+            方法5
+                优点：简单,设置parent即可
+                缺点：低版本浏览器不支持
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+        } */
+
+
+        /* 
+            方法6
+                使用grid网格布局
+        */
+        .parent {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            display: grid;
+        }
+        .child {
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">Jerry</div>
+    </div>
+</body>
+</html>

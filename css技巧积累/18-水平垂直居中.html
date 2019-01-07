@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 
+            方法1
+                absolute + 负margin值
+                父元素设置相对定位,子元素设置绝对定位,margin值设置为负数
+                子元素需要定高
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .child {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        } */
+
+
+        /* 
+            方法2
+                absolute + margin auto
+                父元素设置相对定位,子元素设置绝对定位,margin值设置auto,四个方向设置为0
+                子元素需要定宽高
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .child {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        } */
+
+
+        /* 
+            方法3
+                absolute + calc
+                父元素设置为相对定位,子元素设置绝对定位,使用ralc
+                子元素需要定宽高
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .child {
+            position: absolute;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        } */
+
+
+        /* 
+            方法4
+                absolute + transform
+                父元素设置相对定位,子元素设置绝对定位,使用transform
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .child {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f00;
+            width: 100px;
+            height: 100px;
+        } */
+
+
+        /* 
+            方法5
+                使用flex
+                子元素可以不用设置
+        */
+        /* .parent {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .child {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        } */
+
+
+        /* 
+            方法6
+                使用grid网格布局
+                子元素可以不用设置宽高
+        */
+        .parent {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            display: grid;
+        }
+        .child {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            align-self: center;
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <p class="child"></p>
+    </div>
+</body>
+</html>
