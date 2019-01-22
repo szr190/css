@@ -22,14 +22,16 @@
         }
 
         /* 按钮 */
-
         .switch-component::after {
-            content: '';
+            content: attr(data-content);
             position: absolute;
             top: 0;
             left: 0;
             width: 50%;
             height: 100%;
+            text-align: center;
+            line-height: 30px;
+            color: #dadada;
             background-color: #fff;
             border-radius: 50%;
             transition: all .2s ease;
@@ -45,12 +47,28 @@
 
         .switch-component:checked::after {
             left: 50%;
+            color: #ccc;
         }
     </style>
 </head>
 
 <body>
-    <input class='switch-component' type='checkbox'>
+    <input class='switch-component' type='checkbox' data-content="关">
+
+    <script>
+        var needContributions;
+        document.querySelector(".switch-component").onclick=function() {
+            if (this.checked) {
+                var needContributions = 0;
+                console.log(needContributions);
+                this.setAttribute('data-content', "开")
+            } else {
+                var needContributions = 1;
+                console.log(needContributions);
+                this.setAttribute('data-content', "关")
+            }
+        }
+    </script>
 </body>
 
 </html>
