@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .coupon {
+            position: relative;
+            width: 400px;
+            height: 160px;
+            margin: 50px auto;
+            background-image:
+                radial-gradient(circle at 1px 8px,
+                transparent 6px,
+                #ff9e6d 6px,
+                #ff9e6d 0px),
+                radial-gradient(circle at 199px 8px,
+                transparent 6px,
+                #ff9e6d 6px,
+                #ff9e6d 0px);
+            background-size: 200px 18px;
+            background-position: 0 0, 200px 0;
+            background-repeat-x: no-repeat;
+            font-size: 60px;
+            color: #fff;
+            font-weight: bold;
+            line-height: 160px;
+            padding-left: 60px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .coupon::before {
+            position: absolute;
+            content: "";
+            left: 240px;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            border-left: 1px dashed #fff;
+        }
+
+        .coupon::after {
+            position: absolute;
+            content: "立即领取";
+            font-size: 26px;
+            width: 70px;
+            top: 50%;
+            right: 2%;
+            transform: translate(-50%, -50%);
+            line-height: 40px;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="coupon">50元</div>
+</body>
+
+</html>
