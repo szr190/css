@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        /* 
+            每当遇到大灾大难的时候,很多网站都变成了灰色,那如何让网站快速变灰？
+                - 使用css的filter功能
+        */
+        html {
+            filter: grayscale(100%); /*IE浏览器*/
+            -webkit-filter: grayscale(100%); /*谷歌浏览器*/
+            -moz-filter: grayscale(100%); /*火狐*/
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+            -webkit-filter: grayscale(1); /*谷歌浏览器*/
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 800px;
+            background-color: aquamarine;
+        }
+
+        .wrapper h3{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h3>Yes</h3>
+    </div>
+</body>
+
+</html>
